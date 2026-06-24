@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <!-- Container principal -->
+    <main class="converter-container">
+
+        <h1>💱 Conversor de Moedas</h1>
+
+        <!-- Definição do valor a ser convertido -->
+        <div class="form-group">
+            <label for="amount">Valor a converter:</label>
+            <input type="number" id="amount" placeholder="Ex: 100" min="0">
+        </div>
+
+        <!-- Seleção das moedas -->
+        <div class="selection-group">
+
+            <!-- Moeada de entrada -->
+            <div class="select-box">
+                <label for="from-currency">De:</label>
+                <select id="from-currency">
+                    <option value="BRL">BRL - Real Brasileiro</option>
+                    <option value="USD" selected>USD - Dólar Americano</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - Libra Esterlina</option>
+                </select>
+            </div>
+
+            <!-- Moeda de saída -->
+            <div class="select-box">
+                <label for="to-currency">Para:</label>
+                <select id="to-currency">
+                    <option value="BRL" selected>BRL - Real Brasileiro</option>
+                    <option value="USD">USD - Dólar Americano</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - Libra Estrelina</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Botão para converter -->
+        <button id="convert-btn">Converter</button>
+
+        <!-- Área de resultado -->
+        <div class="result-area">
+            <p id="result-text">Digite um valor para converter</p>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
