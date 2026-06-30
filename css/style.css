@@ -1,4 +1,4 @@
-/* Reset css e fontes */
+/* CSS Reset and fonts */
 * {
   margin: 0;
   padding: 0;
@@ -9,24 +9,116 @@
 body {
   background-color: #0f172a;
   color: #f8fafc;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensures the body takes full viewport height for vertical centering */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
-/* Container principal */
+
+/* Main card container */
 .converter-container {
   background-color: #1e293b;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
 }
 
 .converter-container h1 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 25px;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+input,
+select {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.5s;
+}
+
+input:focus,
+select:focus {
+  border-color: #38bdf8;
+}
+
+/* Removes default arrows from number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Selection group (side by side) */
+.selection-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.select-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* Conversion button */
+#convert-btn {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.5s ease,
+    transform 0.5s ease;
+}
+
+#convert-btn:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-5px);
+}
+
+#convert-btn:active {
+  transform: scale(0.91);
+}
+
+/* Result display area */
+.result-area {
+  margin-top: 25px;
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 16px;
+  border-left: 4px solid #38bdf8;
+  text-align: center;
+}
+#result-text {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
