@@ -122,3 +122,13 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 1.1rem;
   font-weight: 500;
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .selection-group {
+    flex-direction: column;
+  }
+  #convert-btn {
+    margin-top: 20px;
+  }
+}
