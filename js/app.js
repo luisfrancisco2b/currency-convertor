@@ -46,11 +46,17 @@ async function convertCurrency() {
     // Extracting the bid (exchange rate) from the response
     const exchangeRate = data[currencyPair].bid;
 
-    console.log("Dados recebidos da API: ", data);
-    console.log("Taxa de câmbio atual: ", exchangeRate);
+    // Converting the exchange rate strinh into a decimal number
+    const rateAsNumber = parseFloat(exchangeRate);
+
+    // Calculating the final converted value
+    const convertedAmount = amount * rateAsNumber;
+
+    // Formating the final value to show only 2 decimal places
+    const formattedResult = convertedAmount.toFixed(2);
 
     // Temporary display to verify
-    resultText.innerText = `1 ${from} = ${exchangeRate} ${to}`;
+    resultText.innerText = `${amount} ${from} = ${formattedResult} ${to}`
   } catch (error) {
     console.error("Erro ao buscar dados: ", error);
     resultText.innerText =
