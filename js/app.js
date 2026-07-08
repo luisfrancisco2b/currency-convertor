@@ -5,6 +5,14 @@ const toCurrency = document.getElementById("to-currency");
 const convertBtn = document.getElementById("convert-btn");
 const resultText = document.getElementById("result-text");
 
+// Simple object width map of currency codes to their respective symbols
+const currencySymbols = {
+  BRL: "R$",
+  USD: "$",
+  EUR: "€",
+  GBP: "£",
+};
+
 // Base URL for the currency exchange API
 const baseUrl = "https://economia.awesomeapi.com.br/last/";
 
@@ -55,8 +63,12 @@ async function convertCurrency() {
     // Formating the final value to show only 2 decimal places
     const formattedResult = convertedAmount.toFixed(2);
 
-    // Temporary display to verify
-    resultText.innerText = `${amount} ${from} = ${formattedResult} ${to}`
+    // Get the correct symbol
+    const fromSymbol = currencySymbols[from] || from;
+    const toSymbol = currencySymbols[to] || to;
+
+    // Display the final result to the user
+    resultText.innerText = ` ${fromSymbol} ${amount} = ${toSymbol} ${formattedResult}`;
   } catch (error) {
     console.error("Erro ao buscar dados: ", error);
     resultText.innerText =
