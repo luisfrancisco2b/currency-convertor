@@ -11,7 +11,7 @@ body {
   color: #f8fafc;
   min-height: 100vh; /* Ensures the body takes full viewport height for vertical centering */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
 }
@@ -23,7 +23,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 550px;
+  max-width: 650px;
+  margin: auto 0;
 }
 
 .converter-container h1 {
@@ -123,6 +124,13 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 500;
 }
 
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #f8fafc;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .selection-group {
@@ -130,5 +138,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   #convert-btn {
     margin-top: 20px;
+  }
+
+  footer {
+    margin-top: 40px;
   }
 }

@@ -4,6 +4,7 @@ const fromCurrency = document.getElementById("from-currency");
 const toCurrency = document.getElementById("to-currency");
 const convertBtn = document.getElementById("convert-btn");
 const resultText = document.getElementById("result-text");
+const year = document.getElementById("year");
 
 // Simple object width map of currency codes to their respective symbols
 const currencySymbols = {
@@ -12,6 +13,9 @@ const currencySymbols = {
   EUR: "€",
   GBP: "£",
 };
+
+// Updating yaer
+year.textContent = new Date().getFullYear();
 
 // Base URL for the currency exchange API
 const baseUrl = "https://economia.awesomeapi.com.br/last/";
